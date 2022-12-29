@@ -57,3 +57,83 @@ def register():
         return jsonify({
             'message': str(ex)
         }), 500
+
+
+
+@guest_routes.route('/all', methods=['GET'])
+def get_all():
+    try:
+        guests = GuestModel.get_all()
+
+        if guests != None:
+            return jsonify(guests)
+        else:
+            return jsonify({}), 404
+
+        
+    except Exception as ex:
+        return jsonify({'message': str(ex)}), 500
+
+
+
+
+@guest_routes.route('/search/poetry-genre/<genre>', methods=['GET'])
+def get_by_poetry_genre(genre):
+    try:
+        guests = GuestModel.get_by_poetry_genre(genre)
+
+        if guests != None:
+            return jsonify(guests)
+        else:
+            return jsonify({}), 404
+
+        
+    except Exception as ex:
+        return jsonify({'message': str(ex)}), 500
+
+
+@guest_routes.route('/search/age/<age>', methods=['GET'])
+def get_by_age(age):
+    try:
+        guests = GuestModel.get_by_age(age)
+
+        if guests != None:
+            return jsonify(guests)
+        else:
+            return jsonify({}), 404
+
+        
+    except Exception as ex:
+        return jsonify({'message': str(ex)}), 500
+
+
+@guest_routes.route('/search/career/<career>', methods=['GET'])
+def get_by_career(career):
+    try:
+        guests = GuestModel.get_by_career(career)
+
+        if guests != None:
+            return jsonify(guests)
+        else:
+            return jsonify({}), 404
+
+        
+    except Exception as ex:
+        return jsonify({'message': str(ex)}), 500
+
+
+@guest_routes.route('/search/date/<date>', methods=['GET'])
+def get_by_presentation_date(date):
+    try:
+        date1 = str(date).split('-')
+        date = create_date(int(date1[0]),int(date1[1]),int(date1[2]))
+        guests = GuestModel.get_by_presentation_date(date)
+
+        if guests != None:
+            return jsonify(guests)
+        else:
+            return jsonify({}), 404
+
+        
+    except Exception as ex:
+        return jsonify({'message': str(ex)}), 500
