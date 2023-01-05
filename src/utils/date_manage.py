@@ -63,5 +63,5 @@ def get_presentation_date(enrollment_date, carnet_last_digit, poetry_genre):
 def get_age(year, month, day):
     date_born = datetime(year, month, day)
     age = relativedelta(get_date_now(), date_born)
-    return age.years
+    return int(age.years)
 
