@@ -92,6 +92,8 @@ Y la siguiente estructura JSON(ejemplo):
 }
 ```
 #####Observaciones
+
+
 **carnet** : Longitud de 6 caracteres, el primero tendrá que ser una 'A' mayúscula, el tecero un '5' y el último entre ('1', '3' 0 '9').
 
 **phone**: De longitud no mayor a 15 números.
