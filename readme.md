@@ -5,9 +5,9 @@ Esto es una prueba técnica de creación de una API con Flask y PostgreSQL. En e
 -  **main** utilizando Psycopg2.
 -  **withSqlAl** utilizando el ORM SQLAlchemy instegrado en Flask.
 
-####Requerimientos
+#### Requerimientos
 
-#####Paquetes necesarios
+##### Paquetes necesarios
 
 Para instalar los paquetes necesarios utiliza:
 
@@ -15,7 +15,7 @@ Para instalar los paquetes necesarios utiliza:
 
 Ten en cuenta que las ramas requieren diferentes paquetes por lo tanto el contenido del archivo *requirements.txt*  es distinto en las ramas.
 
-#####Archivo env
+##### Archivo env
 
 
 Con el fin de tener privacidad a la hora de conectarnos a la base de datos utlizamos un archivo especial *.env* en el directorio principal para guardar datos privados y acceder a ellos por medio de *python-decouple*, necesitamos lo siguente(ejemplos):
@@ -41,7 +41,7 @@ PGSQLDATABASE = example
 
 ```
 
-#####Base de Datos
+##### Base de Datos
 
 En la base de datos necesitaremos la siguiente estructura en PostgreSQL:
 
@@ -72,8 +72,8 @@ Necesitamos utilizar la funcion de *create_all()* de *Flask-SqlAlchemy*.
 ------------
 
 
-####Peticiones
-#####POST
+#### Peticiones
+##### POST
 Lo utilizaremos para el regiistro la siguiente ruta:
 
 ` localhost:5000/api/show/register`
@@ -91,7 +91,7 @@ Y la siguiente estructura JSON(ejemplo):
 	"poetry_genre":"Lyric"
 }
 ```
-#####Observaciones
+##### Observaciones
 
 
 **carnet** : Longitud de 6 caracteres, el primero tendrá que ser una 'A' mayúscula, el tecero un '5' y el último entre ('1', '3' 0 '9').
