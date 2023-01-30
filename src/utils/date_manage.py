@@ -12,6 +12,7 @@ def create_date(year, month, day):
 def get_day(date):
     return datetime.strftime(date, '%A')
 
+#Last day month
 def last_day_of_month(date):
     next_month = date.replace(day=28) + timedelta(days=4) # this will never fail return next_month - datetime.timedelta(days=next_month.day)
     return next_month - timedelta(days=next_month.day)
@@ -21,7 +22,7 @@ def last_day_of_month(date):
 def get_presentation_date(enrollment_date, carnet_last_digit, poetry_genre):
     #Lyric, Epic, Drama, Saturday, Sunday
 
-    if carnet_last_digit == 1 and poetry_genre == 'Drama':
+    if carnet_last_digit == '1' and poetry_genre == 'Drama':
         date = enrollment_date + timedelta(days=5)
         if get_day(date) == 'Saturday':
             date = enrollment_date + timedelta(days=2)
@@ -30,7 +31,7 @@ def get_presentation_date(enrollment_date, carnet_last_digit, poetry_genre):
         return date
 
 
-    elif carnet_last_digit == 3 and poetry_genre == 'Epic':
+    elif carnet_last_digit == '3' and poetry_genre == 'Epic':
         date = last_day_of_month(enrollment_date)
 
         if get_day(date) == 'Saturday':
